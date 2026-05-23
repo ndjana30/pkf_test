@@ -5,6 +5,9 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Table(name="responsible")
 @Entity
 @Data
@@ -26,9 +29,13 @@ public class Responsible {
     private String name;
     private String surname;
 
-    @Nullable
+   /* @Nullable
     @OneToOne(mappedBy = "responsible")
-    private RDV rdv;
+    private RDV rdv;*/
+
+    @Nullable
+    @OneToMany(mappedBy = "responsible", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<RDV> rdv = new ArrayList<>();
 
     @Nullable
     @OneToOne(mappedBy = "responsible")

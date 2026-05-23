@@ -5,6 +5,9 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "s_service")
 @Data
@@ -14,9 +17,13 @@ public class S_Service {
     @GeneratedValue
     private Long id;
     private String name;
-    @Nullable
+   /* @Nullable
     @OneToOne(mappedBy = "service")
-    private RDV rdv;
+    private RDV rdv;*/
+
+    @Nullable
+    @OneToMany(mappedBy = "service", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<RDV> rdv = new ArrayList<>();
 
     @Nullable
     @OneToOne(cascade = CascadeType.ALL)

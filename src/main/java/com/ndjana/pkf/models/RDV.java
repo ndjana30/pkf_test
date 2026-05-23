@@ -23,16 +23,28 @@ public class RDV {
     @Nullable
     private LocalTime time;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    /*@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "client_id", referencedColumnName = "id")
+    private Client client;*/
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "client_id") // Creates 'client_id' foreign key in rdv table
     private Client client;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "responsible_id", referencedColumnName = "id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "responsible_id") // Creates 'responsible_id' foreign key in rdv table
     private Responsible responsible;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    /*@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "responsible_id", referencedColumnName = "id")
+    private Responsible responsible;
+*/
+    /*@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "service_id", referencedColumnName = "id")
+    private S_Service service;*/
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "service_id") // Creates 'service_id' foreign key in rdv table
     private S_Service service;
 
 

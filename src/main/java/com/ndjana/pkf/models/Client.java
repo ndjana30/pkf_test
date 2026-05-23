@@ -5,6 +5,9 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Table(name = "client")
 @Entity
 @Data
@@ -24,7 +27,14 @@ public class Client {
     private Integer telephone;
     private String name;
     private String surname;
-    @Nullable
+    /*@Nullable
     @OneToOne(mappedBy = "client")
-    private RDV rdv;
+    private RDV rdv;*/
+    @Nullable
+    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<RDV> rdv = new ArrayList<>();
+   /* @Nullable
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "rdv_id") // Prevents a separate join table
+    private List<RDV> rdvs = new ArrayList<>();*/
 }
