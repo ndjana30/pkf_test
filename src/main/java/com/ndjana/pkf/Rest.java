@@ -59,7 +59,7 @@ public class Rest {
     public ResponseEntity<String> createRdv(@PathVariable Long service_id,
                                             @PathVariable Long responsible_id,
                                             @PathVariable Long client_id,
-                                            @RequestParam("date") @DateTimeFormat(pattern = "DD-MM-YYYY") Date date,
+                                            @RequestParam("date") @DateTimeFormat(pattern = "dd-MM-yyyy") Date date,
                                             @RequestParam("motif") String motif) {
 
         return rdvApplication.createRdv(date, motif, client_id, responsible_id, service_id);
