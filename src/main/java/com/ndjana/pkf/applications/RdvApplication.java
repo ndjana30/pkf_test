@@ -14,6 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalTime;
 import java.util.Date;
 import java.util.Optional;
 
@@ -30,7 +31,7 @@ public class RdvApplication implements RdvInterface {
     RdvRepo rdvRepo;
 
     @Override
-    public ResponseEntity<String> createRdv(Date date, String motif, Long client_id, Long responsible_id, Long service_id) {
+    public ResponseEntity<String> createRdv(Date date, String motif, LocalTime time, Long client_id, Long responsible_id, Long service_id) {
         RDV rdv  =new RDV();
         Optional<Client> client = clientRepo.findById(client_id);
         Optional<S_Service> service  =serviceRepository.findById(service_id);
@@ -46,6 +47,7 @@ public class RdvApplication implements RdvInterface {
                         rdv.setService(service.get());
                         rdv.setDate(date);
                         rdv.setMotif(motif);
+                        rdv.setTime(time);
                         rdvRepo.save(rdv);
                     }
             );

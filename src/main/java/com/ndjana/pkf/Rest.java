@@ -9,6 +9,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalTime;
 import java.util.Date;
 
 @RestController
@@ -60,9 +61,10 @@ public class Rest {
                                             @PathVariable Long responsible_id,
                                             @PathVariable Long client_id,
                                             @RequestParam("date") @DateTimeFormat(pattern = "dd-MM-yyyy") Date date,
-                                            @RequestParam("motif") String motif) {
+                                            @RequestParam("motif") String motif,
+                                            @RequestParam("time") @DateTimeFormat(pattern = "HH:mm:ss") LocalTime time) {
 
-        return rdvApplication.createRdv(date, motif, client_id, responsible_id, service_id);
+        return rdvApplication.createRdv(date, motif,time, client_id, responsible_id, service_id);
     }
 
 }
