@@ -40,7 +40,14 @@ public class ServiceApplication implements ServiceInterface{
         try{
             Optional<S_Service> s = sr.findById(service_id);
             Optional<Responsible> r = rr.findById(responsible_id);
-            if (s.isPresent())
+
+            s.flatMap(ss -> r).ifPresent(rs -> {
+                System.out.println("service found");
+                System.out.println("responsible found");
+                s.get().setResponsible(r.get());
+                sr.save(s.get());
+            });
+            /*if (s.isPresent())
             {
                 System.out.println("service found");
                 if (r.isPresent())
@@ -56,7 +63,7 @@ public class ServiceApplication implements ServiceInterface{
             }
             else{
                 return new ResponseEntity<>("Service not found",HttpStatus.BAD_REQUEST);
-            }
+            }*/
             return new ResponseEntity<String>("Responsible Assigned",HttpStatus.OK);
         }
         catch (Exception e)

@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Time;
 import java.util.Date;
 
 @Table(name = "rdv")
@@ -16,6 +17,7 @@ public class RDV {
     private Long id;
     private Date date;
     private String motif;
+    private String duration="1 Hour";
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "client_id", referencedColumnName = "id")
