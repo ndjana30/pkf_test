@@ -4,7 +4,7 @@ import org.springframework.http.ResponseEntity;
 
 import java.time.LocalTime;
 import java.util.Date;
-
+//repository, to use CRUD methods
 public interface RdvInterface {
     public ResponseEntity<String> createRdv(Date date,String motif, LocalTime time,
                                             Long client_id,

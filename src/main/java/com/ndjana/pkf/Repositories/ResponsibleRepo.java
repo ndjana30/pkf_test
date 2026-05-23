@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ResponsibleRepo extends JpaRepository<Responsible,Long> {
+public interface ResponsibleRepo extends JpaRepository<Responsible,Long> //repository, to use CRUD methods
+{
 
 }

@@ -14,7 +14,8 @@ import java.util.List;
 @NoArgsConstructor
 public class Responsible {
 
-    public Responsible(String email, Integer telephone, String name, String surname) {
+    public Responsible(String email, Integer telephone, String name, String surname) //some args constructor
+    {
         this.email = email;
         this.telephone = telephone;
         this.name = name;
@@ -29,9 +30,7 @@ public class Responsible {
     private String name;
     private String surname;
 
-   /* @Nullable
-    @OneToOne(mappedBy = "responsible")
-    private RDV rdv;*/
+
 
     @Nullable
     @OneToMany(mappedBy = "responsible", cascade = CascadeType.ALL, orphanRemoval = true)

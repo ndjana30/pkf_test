@@ -12,13 +12,17 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
+
+
 public class Client {
+
+
     public Client(String email, Integer telephone, String name, String surname) {
         this.email = email;
         this.telephone = telephone;
         this.name = name;
         this.surname = surname;
-    }
+    } //Constructor with some arguments for client object easy creation
 
     @Id
     @GeneratedValue
@@ -27,14 +31,9 @@ public class Client {
     private Integer telephone;
     private String name;
     private String surname;
-    /*@Nullable
-    @OneToOne(mappedBy = "client")
-    private RDV rdv;*/
+
     @Nullable
     @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<RDV> rdv = new ArrayList<>();
-   /* @Nullable
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "rdv_id") // Prevents a separate join table
-    private List<RDV> rdvs = new ArrayList<>();*/
+    private List<RDV> rdv = new ArrayList<>(); //One-to-many relationship
+
 }
