@@ -1,3 +1,5 @@
+Prerequisites: java 21, Postgresql, Dbeaver or pgAdmin4.
+
 Create empty postgresql database with dbname: postgres, username: postgres, password:postgres 
 
 Run project
