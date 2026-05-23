@@ -1,11 +1,15 @@
 package com.ndjana.pkf;
 
 import com.ndjana.pkf.applications.ClientApplication;
+import com.ndjana.pkf.applications.RdvApplication;
 import com.ndjana.pkf.applications.ResponsibleApplication;
 import com.ndjana.pkf.applications.ServiceApplication;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Date;
 
 @RestController
 @RequestMapping("pkf/rdv")
@@ -17,6 +21,8 @@ public class Rest {
     public ResponsibleApplication ra;
     @Autowired
     ServiceApplication sa;
+    @Autowired
+    RdvApplication rdvApplication;
 
     @PostMapping("client/create")
     public ResponseEntity<String> createClient(@RequestParam("email") String email,
@@ -47,6 +53,16 @@ public class Rest {
                                                              @PathVariable Long responsible_id) {
 
         return sa.AssignResponsible(service_id,responsible_id);
+    }
+
+    @PostMapping("create/{service_id}/{responsible_id}/{client_id}")
+    public ResponseEntity<String> createRdv(@PathVariable Long service_id,
+                                            @PathVariable Long responsible_id,
+                                            @PathVariable Long client_id,
+                                            @RequestParam("date") @DateTimeFormat(pattern = "DD-MM-YYYY") Date date,
+                                            @RequestParam("motif") String motif) {
+
+        return rdvApplication.createRdv(date, motif, client_id, responsible_id, service_id);
     }
 
 }
