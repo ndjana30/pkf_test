@@ -1,9 +1,9 @@
 Prerequisites: java 21, Postgresql, Dbeaver or pgAdmin4.
 
-Create empty postgresql database with dbname: postgres, username: postgres, password:postgres 
+Create empty postgresql database with dbname: postgres, username: postgres, password:postgres .
 
-Run project
-Original(Basic) link is: http://localhost:8080/pkf/rdv. let's call it origin
+Run project,
+Original(Basic) link is: http://localhost:8080/pkf/rdv. let's call it origin.
 To create a client, link is origin/client/create. request params are email: String, telephone: Integer, name: String, Surname: String
 
 To create a responsible, link is origin/responsible/create. the params are thesame as to create a client 
