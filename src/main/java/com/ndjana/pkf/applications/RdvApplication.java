@@ -57,7 +57,7 @@ public class RdvApplication implements RdvInterface {
                         rdvRepo.save(rdv);
                     }
             );
-            return new ResponseEntity<>("Rendez-vous cerated",HttpStatus.OK);
+            return new ResponseEntity<>("Rendezvous cerated",HttpStatus.OK);
         }
         catch (Exception e)
         {
