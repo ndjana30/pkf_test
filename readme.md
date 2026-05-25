@@ -18,14 +18,14 @@ Other Tools: Lombok
 
 1) Clone my repository
 2)Create empty Postgresql database with
-name: postgres
-pass:postgres
+name: postgres,
+pass:postgres,
 user:postgres
 
 
 **Building**
-Either use IDE or use maven .
-Build with ./mvnw clean install
+Either use IDE or use maven,
+Build with ./mvnw clean install,
 Run with ./mvnw spring-boot:run
 
 **Running Tests**
