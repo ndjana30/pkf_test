@@ -36,6 +36,7 @@ public class Client {
     @NotBlank(message = "Email is required")
     @Column(unique = true,nullable = false)
     private String email;
+    @Column(unique = true,nullable = false)
     private String telephone;
     @NotBlank(message = "Username cannot be blank")
     @Size(min = 3, max = 20, message = "name must be between 3 and 20 characters")

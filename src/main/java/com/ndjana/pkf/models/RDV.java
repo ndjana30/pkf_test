@@ -2,6 +2,7 @@ package com.ndjana.pkf.models;
 
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -17,8 +18,9 @@ public class RDV {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(unique = true,nullable = false)
     private Long id;
-
+    @NotBlank
     private LocalDate date;
+    @NotBlank(message = "motif is required")
     private String motif;
     private String duration="1 Hour";
     @Nullable
