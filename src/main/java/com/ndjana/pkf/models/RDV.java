@@ -17,6 +17,7 @@ public class RDV {
     @Id
     @GeneratedValue
     private Long id;
+
     private Date date;
     private String motif;
     private String duration="1 Hour";

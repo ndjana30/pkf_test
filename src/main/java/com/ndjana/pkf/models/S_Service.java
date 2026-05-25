@@ -2,6 +2,8 @@ package com.ndjana.pkf.models;
 
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -16,6 +18,8 @@ public class S_Service {
     @Id
     @GeneratedValue
     private Long id;
+    @NotBlank(message = "service name cannot be blank")
+    @Size(min = 3, max = 20, message = "service name must be between 3 and 20 characters")
     private String name;
 
 
