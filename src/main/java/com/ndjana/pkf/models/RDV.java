@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.sql.Time;
 import java.time.LocalTime;
 import java.util.Date;
 
@@ -35,7 +34,7 @@ public class RDV {
 
     @ManyToOne(fetch = FetchType.LAZY) //Many-to-one relationship with S_Service class/service table in database
     @JoinColumn(name = "service_id") // Creates 'service_id' foreign key in rdv table
-    private S_Service service;
+    private SService service;
 
 
 }

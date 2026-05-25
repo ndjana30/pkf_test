@@ -1,6 +1,6 @@
 package com.ndjana.pkf.applications;
 
-import com.ndjana.pkf.Repositories.ResponsibleRepo;
+import com.ndjana.pkf.repositories.ResponsibleRepo;
 import com.ndjana.pkf.interfaces.ResponsibleInterface;
 import com.ndjana.pkf.models.Responsible;
 import org.springframework.beans.factory.annotation.Autowired;

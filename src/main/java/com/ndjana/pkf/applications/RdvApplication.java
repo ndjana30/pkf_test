@@ -1,14 +1,14 @@
 package com.ndjana.pkf.applications;
 
-import com.ndjana.pkf.Repositories.ClientRepo;
-import com.ndjana.pkf.Repositories.RdvRepo;
-import com.ndjana.pkf.Repositories.ResponsibleRepo;
-import com.ndjana.pkf.Repositories.ServiceRepository;
+import com.ndjana.pkf.repositories.ClientRepo;
+import com.ndjana.pkf.repositories.RdvRepo;
+import com.ndjana.pkf.repositories.ResponsibleRepo;
+import com.ndjana.pkf.repositories.ServiceRepository;
 import com.ndjana.pkf.interfaces.RdvInterface;
 import com.ndjana.pkf.models.Client;
 import com.ndjana.pkf.models.RDV;
 import com.ndjana.pkf.models.Responsible;
-import com.ndjana.pkf.models.S_Service;
+import com.ndjana.pkf.models.SService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -36,7 +36,7 @@ public class RdvApplication implements RdvInterface {
     public ResponseEntity<String> createRdv(Date date, String motif, LocalTime time, Long client_id, Long responsible_id, Long service_id) {
         RDV rdv  =new RDV();
         Optional<Client> client = clientRepo.findById(client_id);
-        Optional<S_Service> service  =serviceRepository.findById(service_id);
+        Optional<SService> service  =serviceRepository.findById(service_id);
         Optional<Responsible> responsible = responsibleRepo.findById(responsible_id);
         try {
             client.flatMap(c -> service).flatMap(s -> responsible).ifPresent(

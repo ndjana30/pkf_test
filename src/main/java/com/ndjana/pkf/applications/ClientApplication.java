@@ -1,6 +1,6 @@
 package com.ndjana.pkf.applications;
 
-import com.ndjana.pkf.Repositories.ClientRepo;
+import com.ndjana.pkf.repositories.ClientRepo;
 import com.ndjana.pkf.interfaces.ClientInterface;
 import com.ndjana.pkf.models.Client;
 import org.springframework.beans.factory.annotation.Autowired;

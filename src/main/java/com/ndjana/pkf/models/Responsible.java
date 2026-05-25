@@ -47,5 +47,5 @@ public class Responsible {
 
     @Nullable
     @OneToOne(mappedBy = "responsible")
-    private S_Service service ;
+    private SService service ;
 }

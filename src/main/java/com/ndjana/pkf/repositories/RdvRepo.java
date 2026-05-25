@@ -1,4 +1,4 @@
-package com.ndjana.pkf.Repositories;
+package com.ndjana.pkf.repositories;
 
 import com.ndjana.pkf.models.RDV;
 import org.springframework.data.jpa.repository.JpaRepository;

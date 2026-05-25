@@ -14,7 +14,7 @@ import java.util.List;
 @Table(name = "s_service")
 @Data
 @NoArgsConstructor
-public class S_Service {
+public class SService {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
