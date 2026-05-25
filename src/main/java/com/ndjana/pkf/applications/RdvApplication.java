@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalTime;
 import java.util.Date;
@@ -31,6 +32,7 @@ public class RdvApplication implements RdvInterface {
     RdvRepo rdvRepo;
 
     @Override
+    @Transactional
     public ResponseEntity<String> createRdv(Date date, String motif, LocalTime time, Long client_id, Long responsible_id, Long service_id) {
         RDV rdv  =new RDV();
         Optional<Client> client = clientRepo.findById(client_id);

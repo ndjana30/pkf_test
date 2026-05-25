@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class ResponsibleApplication implements ResponsibleInterface {
@@ -14,6 +15,7 @@ public class ResponsibleApplication implements ResponsibleInterface {
     ResponsibleRepo rr;
 
     @Override
+    @Transactional
     public ResponseEntity<String> createResponsible(String email, Integer telephone, String name, String surname) {
         try{
             rr.save(new Responsible(email, telephone, name, surname));

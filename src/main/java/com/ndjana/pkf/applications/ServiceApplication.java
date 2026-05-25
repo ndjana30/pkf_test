@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -21,6 +22,7 @@ public class ServiceApplication implements ServiceInterface{
     ResponsibleRepo rr;
 
     @Override
+    @Transactional
     public ResponseEntity<String> createService(String name) {
         try{
             S_Service ss = new S_Service();
@@ -36,6 +38,7 @@ public class ServiceApplication implements ServiceInterface{
     }
 
     @Override
+    @Transactional
     public ResponseEntity<String> AssignResponsible(Long service_id,Long responsible_id) {
         try{
             Optional<S_Service> s = sr.findById(service_id);
