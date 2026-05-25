@@ -29,10 +29,12 @@ public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(unique = true,nullable = false)
     private Long id;
 
     @Email(message = "Please provide a valid email address")
     @NotBlank(message = "Email is required")
+    @Column(unique = true,nullable = false)
     private String email;
     private String telephone;
     @NotBlank(message = "Username cannot be blank")

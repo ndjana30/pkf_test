@@ -16,10 +16,14 @@ import java.util.Optional;
 @Service
 public class ServiceApplication implements ServiceInterface{
 
-    @Autowired
     ServiceRepository sr;
-    @Autowired
     ResponsibleRepo rr;
+
+@Autowired
+    public ServiceApplication(ServiceRepository sr, ResponsibleRepo rr) {
+        this.sr = sr;
+        this.rr = rr;
+    }
 
     @Override
     @Transactional

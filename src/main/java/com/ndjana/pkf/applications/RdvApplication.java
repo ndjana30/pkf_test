@@ -22,14 +22,18 @@ import java.util.Optional;
 @Service
 public class RdvApplication implements RdvInterface {
 
-    @Autowired
     ClientRepo clientRepo;
-    @Autowired
     ServiceRepository serviceRepository;
-    @Autowired
     ResponsibleRepo responsibleRepo;
-    @Autowired
     RdvRepo rdvRepo;
+
+    @Autowired
+    public RdvApplication(ClientRepo clientRepo, ServiceRepository serviceRepository, ResponsibleRepo responsibleRepo, RdvRepo rdvRepo) {
+        this.clientRepo = clientRepo;
+        this.serviceRepository = serviceRepository;
+        this.responsibleRepo = responsibleRepo;
+        this.rdvRepo = rdvRepo;
+    }
 
     @Override
     @Transactional

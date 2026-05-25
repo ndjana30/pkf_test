@@ -11,8 +11,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class ClientApplication implements ClientInterface {
-    @Autowired
+
     ClientRepo cr;
+    @Autowired
+    ClientApplication(ClientRepo cr)
+    {
+        this.cr=cr;
+    }
 
 
     @Override

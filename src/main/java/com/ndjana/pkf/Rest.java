@@ -16,14 +16,18 @@ import java.util.Date;
 @RequestMapping("pkf/rdv")
 public class Rest {
 
-    @Autowired
     ClientApplication ca;
-    @Autowired
     ResponsibleApplication ra;
-    @Autowired
     ServiceApplication sa;
-    @Autowired
     RdvApplication rdvApplication;
+
+    @Autowired
+    public Rest(ClientApplication ca, ResponsibleApplication ra, ServiceApplication sa, RdvApplication rdvApplication) {
+        this.ca = ca;
+        this.ra = ra;
+        this.sa = sa;
+        this.rdvApplication = rdvApplication;
+    }
 
     @PostMapping("client/create")
     public ResponseEntity<String> createClient(@RequestParam("email") String email,

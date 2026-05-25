@@ -17,6 +17,7 @@ import java.util.List;
 public class SService {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(unique = true,nullable = false)
     private Long id;
     @NotBlank(message = "service name cannot be blank")
     @Size(min = 3, max = 20, message = "service name must be between 3 and 20 characters")

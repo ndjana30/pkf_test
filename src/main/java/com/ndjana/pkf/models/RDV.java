@@ -15,6 +15,7 @@ import java.util.Date;
 public class RDV {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(unique = true,nullable = false)
     private Long id;
 
     private Date date;

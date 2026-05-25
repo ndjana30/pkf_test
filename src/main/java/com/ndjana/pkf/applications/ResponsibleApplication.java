@@ -11,8 +11,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class ResponsibleApplication implements ResponsibleInterface {
-    @Autowired
     ResponsibleRepo rr;
+
+@Autowired
+public ResponsibleApplication(ResponsibleRepo rr)
+{
+    this.rr=rr;
+}
 
     @Override
     @Transactional
