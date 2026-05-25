@@ -16,7 +16,7 @@ public class ResponsibleApplication implements ResponsibleInterface {
 
     @Override
     @Transactional
-    public ResponseEntity<String> createResponsible(String email, Integer telephone, String name, String surname) {
+    public ResponseEntity<String> createResponsible(String email, String telephone, String name, String surname) {
         try{
             rr.save(new Responsible(email, telephone, name, surname));
             return new ResponseEntity<String>("Responsible created", HttpStatus.OK);

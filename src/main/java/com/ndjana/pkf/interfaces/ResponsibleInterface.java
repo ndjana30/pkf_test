@@ -4,5 +4,5 @@ import org.springframework.http.ResponseEntity;
 
 //repository, to use CRUD methods
 public interface ResponsibleInterface {
-    public ResponseEntity<String> createResponsible(String email,Integer telephone, String name, String surname);
+    public ResponseEntity<String> createResponsible(String email,String telephone, String name, String surname);
 }

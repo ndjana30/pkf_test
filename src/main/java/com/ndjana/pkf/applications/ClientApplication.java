@@ -17,7 +17,7 @@ public class ClientApplication implements ClientInterface {
 
     @Override
     @Transactional
-    public ResponseEntity<String> createClient(String email, Integer telephone, String name, String surname) {
+    public ResponseEntity<String> createClient(String email, String telephone, String name, String surname) {
         Client client = new Client(email, telephone, name, surname);
         try {
             cr.save(client);

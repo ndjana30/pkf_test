@@ -20,7 +20,7 @@ import java.util.List;
 public class Client {
 
 
-    public Client(String email, Integer telephone, String name, String surname) {
+    public Client(String email, String telephone, String name, String surname) {
         this.email = email;
         this.telephone = telephone;
         this.name = name;
@@ -34,7 +34,7 @@ public class Client {
     @Email(message = "Please provide a valid email address")
     @NotBlank(message = "Email is required")
     private String email;
-    private Integer telephone;
+    private String telephone;
     @NotBlank(message = "Username cannot be blank")
     @Size(min = 3, max = 20, message = "name must be between 3 and 20 characters")
     private String name;

@@ -17,7 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 public class Responsible {
 
-    public Responsible(String email, Integer telephone, String name, String surname) //some args constructor
+    public Responsible(String email, String telephone, String name, String surname) //some args constructor
     {
         this.email = email;
         this.telephone = telephone;
@@ -31,7 +31,7 @@ public class Responsible {
     @Email(message = "Please provide a valid email address")
     @NotBlank(message = "Email is required")
     private String email;
-    private Integer telephone;
+    private String telephone;
     @NotBlank(message = "Username cannot be blank")
     @Size(min = 3, max = 20, message = "name must be between 3 and 20 characters")
     private String name;

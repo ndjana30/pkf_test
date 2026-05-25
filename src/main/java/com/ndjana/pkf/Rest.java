@@ -27,7 +27,7 @@ public class Rest {
 
     @PostMapping("client/create")
     public ResponseEntity<String> createClient(@RequestParam("email") String email,
-                                               @RequestParam("telephone") Integer telephone,
+                                               @RequestParam("telephone") String telephone,
                                                @RequestParam("name") String name,
                                                @RequestParam("surname") String surname) {
 
@@ -36,7 +36,7 @@ public class Rest {
 
     @PostMapping("responsible/create")
     public ResponseEntity<String> createResponsible(@RequestParam("email") String email,
-                                               @RequestParam("telephone") Integer telephone,
+                                               @RequestParam("telephone") String telephone,
                                                @RequestParam("name") String name,
                                                @RequestParam("surname") String surname) {
 
