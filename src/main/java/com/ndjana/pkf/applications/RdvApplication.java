@@ -15,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Date;
 import java.util.Optional;
@@ -37,7 +38,7 @@ public class RdvApplication implements RdvInterface {
 
     @Override
     @Transactional
-    public ResponseEntity<String> createRdv(Date date, String motif, LocalTime time, Long client_id, Long responsible_id, Long service_id) {
+    public ResponseEntity<String> createRdv(LocalDate date, String motif, LocalTime time, Long client_id, Long responsible_id, Long service_id) {
         RDV rdv  =new RDV();
         Optional<Client> client = clientRepo.findById(client_id);
         Optional<SService> service  =serviceRepository.findById(service_id);

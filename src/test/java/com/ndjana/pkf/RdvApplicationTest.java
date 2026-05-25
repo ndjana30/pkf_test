@@ -20,6 +20,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Date;
 import java.util.Optional;
@@ -50,13 +51,13 @@ class RdvApplicationTest {
     @InjectMocks
     private RdvApplication rdvApplication;
 
-    private Date testDate;
+    private LocalDate testDate;
     private LocalTime testTime;
     private String testMotif;
 
     @BeforeEach
     void setUp() {
-        testDate = new Date();
+        testDate = LocalDate.MIN;
         testTime = LocalTime.of(14, 30);
         testMotif = "Consultation";
     }
