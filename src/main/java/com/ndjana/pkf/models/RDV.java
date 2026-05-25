@@ -15,7 +15,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class RDV {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.UUID)
     private Long id;
 
     private Date date;
