@@ -28,7 +28,7 @@ public class Client {
     } //Constructor with some arguments for client object easy creation
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     @Email(message = "Please provide a valid email address")

@@ -16,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 public class S_Service {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     @NotBlank(message = "service name cannot be blank")
     @Size(min = 3, max = 20, message = "service name must be between 3 and 20 characters")

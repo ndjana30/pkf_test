@@ -17,9 +17,9 @@ import java.util.Date;
 public class Rest {
 
     @Autowired
-    public ClientApplication ca;
+    ClientApplication ca;
     @Autowired
-    public ResponsibleApplication ra;
+    ResponsibleApplication ra;
     @Autowired
     ServiceApplication sa;
     @Autowired

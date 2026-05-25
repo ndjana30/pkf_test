@@ -26,7 +26,7 @@ public class Responsible {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     @Email(message = "Please provide a valid email address")
     @NotBlank(message = "Email is required")
